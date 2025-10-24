@@ -3,68 +3,35 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import FooterCTA from "../HomeComponents/FooterCTA";
+import { useCaseStudies } from "@/context/CaseStudiesContext";
 
 export default function Projects() {
   const [filter, setFilter] = useState("All");
+  const { caseStudiesPreview } = useCaseStudies();
 
-  const allCaseStudies = [
-    {
-      id: 1,
-      title: "Blainy - SaaS Scaled to ~85K Users",
-      category: "SaaS",
-      image: "/images/blainy-dashboard.jpg",
-      excerpt: "Scaled from zero to 85K organic users in 12 months with $0 ad spend",
-      metrics: ["85K Users", "30M Impressions", "831 Reddit Conversions"],
-      bgColor: "#E5DBEB",
-    },
-    {
-      id: 2,
-      title: "Reddit Marketing - Thousands of Organic Users",
-      category: "Marketing",
-      image: "/images/reddit-dashboard.jpg",
-      excerpt: "Generated 7,331 organic users and 831 conversions in a single month",
-      metrics: ["7.3K Users", "$0 Ad Spend", "Higher ROI than Paid"],
-      bgColor: "#F4F2EF",
-    },
-    {
-      id: 3,
-      title: "Everdry Waterproofing - Local Service Business",
-      category: "Service Business",
-      image: "/images/local-business.jpg",
-      excerpt: "Local SEO domination for a waterproofing service company",
-      metrics: ["Top Rankings", "More Leads", "Higher Visibility"],
-      bgColor: "#DCE4EA",
-    },
-    {
-      id: 4,
-      title: "Multi-Channel Social - Thousands of Conversions",
-      category: "Social Media",
-      image: "/images/social-dashboard.jpg",
-      excerpt: "Managing 6 platforms simultaneously with massive reach",
-      metrics: ["80K+ YouTube Views", "3M+ Instagram Reach", "6 Platforms"],
-      bgColor: "#F4F2EF",
-    },
-    {
-      id: 5,
-      title: "Hify - Video Messaging Platform Growth",
-      category: "SaaS",
-      image: "/images/hify-growth.jpg",
-      excerpt: "Explosive growth through strategic Reddit marketing",
-      metrics: ["Rapid User Growth", "Community Building", "Organic Traffic"],
-      bgColor: "#E5DBEB",
-    },
-    {
-      id: 6,
-      title: "Content Marketing Strategy - Tech Startup",
-      category: "Content Marketing",
-      image: "/images/content-strategy.jpg",
-      excerpt: "Built thought leadership through strategic content",
-      metrics: ["50+ Articles", "High Engagement", "Brand Authority"],
-      bgColor: "#DCE4EA",
-    },
-  ];
+  // Map preview data to match your component structure
+  const allCaseStudies = caseStudiesPreview.map((study, index) => ({
+    id: study.id,
+    title: study.title.replace(/^Case Study \d+:\s*/, ""), // Remove "Case Study 1:" prefix
+    category: getCategoryFromId(study.id),
+    image: study.image,
+    excerpt: study.description,
+    metrics: study.numbers?.slice(0, 3) || [study.result || "View Results"],
+    bgColor: study.bgColor,
+  }));
 
-  const categories = ["All", "SaaS", "Marketing", "Service Business", "Social Media", "Content Marketing"];
+  // Helper function to assign categories
+  function getCategoryFromId(id: string): string {
+    const categoryMap: Record<string, string> = {
+      "blainy-saas": "SaaS",
+      "reddit-marketing": "Marketing",
+      "everdry-local": "Service Business",
+      "multi-channel-social": "Social Media",
+    };
+    return categoryMap[id] || "Marketing";
+  }
+
+  const categories = ["All", "SaaS", "Marketing", "Service Business", "Social Media"];
 
   const filteredProjects = filter === "All" 
     ? allCaseStudies 
@@ -124,7 +91,7 @@ export default function Projects() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="group"
               >
-                <Link href={`/case-studies/${study.id}`}>
+                <Link href={`/projects/${study.id}`}>
                   <div
                     className="rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 h-full flex flex-col"
                     style={{ backgroundColor: study.bgColor }}
@@ -161,8 +128,6 @@ export default function Projects() {
                           </span>
                         ))}
                       </div>
-
-                    
                     </div>
                   </div>
                 </Link>
@@ -171,7 +136,7 @@ export default function Projects() {
           </div>
         </div>
       </section>
-<FooterCTA/>
+      <FooterCTA/>
     </div>
   );
 }

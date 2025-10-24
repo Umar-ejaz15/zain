@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 type CaseStudy = {
+  id: string; // Add id field
   title: string;
   image: string;
   description?: string;
@@ -24,7 +25,6 @@ export default function ProjectCaseStudy({ caseData }: ProjectCaseStudyProps) {
     <section id="cards" className="relative flex flex-col items-center gap-0 py-10 px-4">
       {caseData.map((item, index) => (
         <div
-        
           key={index}
           className="w-full card card__content max-w-7xl flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:gap-12 rounded-3xl px-6 sm:px-10 lg:px-16 py-12 lg:py-16 shadow-sm hover:shadow-md transition-shadow duration-300"
           style={{ backgroundColor: item.bgColor }}
@@ -96,8 +96,8 @@ export default function ProjectCaseStudy({ caseData }: ProjectCaseStudyProps) {
               </div>
             )}
 
-            <a
-              href="#"
+            <Link
+              href={`/projects/${item.id}`}
               className="inline-flex items-center gap-2 bg-gray-900 hover:bg-gray-800 text-white px-7 py-3.5 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg mt-4"
             >
               {item.cta}
@@ -114,7 +114,7 @@ export default function ProjectCaseStudy({ caseData }: ProjectCaseStudyProps) {
                   d="M13 7l5 5m0 0l-5 5m5-5H6"
                 />
               </svg>
-            </a>
+            </Link>
           </motion.div>
 
           {/* Right Image */}
@@ -135,9 +135,6 @@ export default function ProjectCaseStudy({ caseData }: ProjectCaseStudyProps) {
           </motion.div>
         </div>
       ))}
-
-      {/* View All Case Studies Button */}
-    
     </section>
   );
 }

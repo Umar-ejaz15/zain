@@ -109,51 +109,6 @@ export default function FooterCTA() {
           </div>
         </motion.div>
 
-        {/* Social Links */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12"
-        >
-          {socialLinks.map((link, index) => (
-            <motion.a
-              key={link.name}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-              className="flex items-center justify-between bg-white rounded-2xl px-6 py-4 hover:shadow-lg transition-all duration-300 group"
-            >
-              <div className="flex items-center gap-3">
-                <div className="text-gray-900 group-hover:text-red-600 transition-colors">
-                  {link.icon}
-                </div>
-                <span className="font-semibold text-gray-900">
-                  {link.name}
-                </span>
-              </div>
-              <svg
-                className="w-5 h-5 text-gray-400 group-hover:text-red-600 group-hover:translate-x-1 transition-all"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </motion.a>
-          ))}
-        </motion.div>
-
         {/* Copyright */}
         <motion.div
           initial={{ opacity: 0 }}
