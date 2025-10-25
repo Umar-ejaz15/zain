@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 type CaseStudy = {
-  id: string; // Add id field
+  id: string;
   title: string;
   image: string;
   description?: string;
@@ -24,23 +24,29 @@ export default function ProjectCaseStudy({ caseData }: ProjectCaseStudyProps) {
   return (
     <section
       id="cards"
-      className="relative flex flex-col items-center max-w-7xl mx-auto  rounded-3xl gap-10 py-16 px-4 sm:px-6 bg-[#F4F2EE]  lg:px-8"
+      className="relative flex flex-col items-center max-w-7xl mx-auto rounded-3xl gap-2 py-20 px-6 sm:px-8 bg-gradient-to-br from-[#F8F6F4] to-[#ECEBE4]"
     >
       {caseData.map((item, index) => (
-        <div
-          key={index}
-          className="w-full card card__content max-w-6xl flex flex-col-reverse lg:flex-row items-center justify-between gap-10 lg:gap-16 rounded-3xl px-6 sm:px-10 lg:px-16 py-12 lg:py-16 shadow-sm hover:shadow-lg transition-all duration-300"
-          style={{ backgroundColor: item.bgColor }}
+        <motion.div
+          key={item.id || index}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className={`w-full flex card card-content flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-20 rounded-3xl p-8 sm:p-10 lg:p-14 shadow-[0_6px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_10px_25px_rgba(0,0,0,0.12)] transition-all duration-300`}
+          style={{
+            background: `linear-gradient(135deg, ${item.bgColor}, ${item.bgColor}dd)`,
+          }}
         >
           {/* Left Content */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
             className="w-full lg:w-1/2 space-y-6"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 leading-snug">
               {item.title}
             </h2>
 
@@ -50,11 +56,23 @@ export default function ProjectCaseStudy({ caseData }: ProjectCaseStudyProps) {
               </p>
             )}
 
-          
+            {/* Numbers Section */}
+            {item.numbers && item.numbers.length > 0 && (
+              <ul className="flex flex-col sm:flex-col gap-3 sm:gap-2 pt-2">
+                {item.numbers.map((num, idx) => (
+                  <li
+                    key={idx}
+                    className="text-lg font-semibold text-gray-900 bg-white/70 backdrop-blur-sm rounded-xl px-4 py-2 shadow-sm"
+                  >
+                    {num}
+                  </li>
+                ))}
+              </ul>
+            )}
 
             <Link
               href={`/projects/${item.id}`}
-              className="inline-flex items-center gap-2 bg-gray-900 hover:bg-gray-800 text-white px-7 py-3.5 rounded-full font-medium transition-all duration-300 hover:scale-105 shadow-md mt-4"
+              className="inline-flex items-center gap-3 bg-gray-900 hover:bg-gray-800 text-white px-8 py-3.5 rounded-full font-medium transition-transform duration-300 hover:scale-[1.04] active:scale-95 shadow-md"
             >
               {item.cta}
               <svg
@@ -75,21 +93,22 @@ export default function ProjectCaseStudy({ caseData }: ProjectCaseStudyProps) {
 
           {/* Right Image */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
             className="w-full lg:w-1/2 flex justify-center"
           >
-            <div className="w-full max-w-xl rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+            <div className="relative w-full max-w-xl rounded-2xl overflow-hidden shadow-xl border border-gray-100 bg-white/60 backdrop-blur-sm">
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-full h-72 sm:h-80 lg:h-96 object-cover"
+                className="w-full h-72 sm:h-80 lg:h-96 object-cover transition-transform duration-500 hover:scale-105"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
             </div>
           </motion.div>
-        </div>
+        </motion.div>
       ))}
     </section>
   );

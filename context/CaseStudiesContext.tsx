@@ -70,16 +70,24 @@ const caseStudiesPreview = [
     bgColor: "#E5DBEB",
     link: "/case-studies/reddit-marketing"
   },
-  {
-    id: "everdry-local",
-    title: "Case Study 3: Service Business - Everdry Waterproofing",
-    image: "/images/local-business.jpg",
-    description: "Helped local waterproofing business dominate their market through strategic local SEO and review campaigns.",
-    result: "Increased local visibility. More qualified leads. Stronger online presence.",
-    cta: "Need Local Marketing? Let's Talk →",
-    bgColor: "#D2E8C8",
-    link: "/case-studies/everdry-local"
-  },
+ {
+  id: "everdry-local",
+  title: "Case Study 3: Service Business - Everdry Waterproofing",
+  image: "/images/local-business.jpg",
+  description:
+    "Helped local waterproofing business dominate their market through strategic local SEO and review campaigns.",
+  numbers: [
+    "↑ 220% Organic Traffic Growth",
+    "3× More Local Leads",
+    "100+ New Google Reviews"
+  ],
+  result:
+    "Increased local visibility. More qualified leads. Stronger online presence.",
+  cta: "Need Local Marketing? Let's Talk →",
+  bgColor: "#D2E8C8",
+  link: "/case-studies/everdry-local",
+},
+
   {
     id: "multi-channel-social",
     title: "Case Study 4: Multi-Channel Social - Thousands of Conversions",
