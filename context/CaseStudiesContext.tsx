@@ -1,6 +1,7 @@
 // ============================================
 // CONTEXT SETUP (FIXED FOR TSX)
 // ============================================
+"use client";
 
 import React, { createContext, useContext, ReactNode } from "react";
 
