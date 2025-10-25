@@ -1,11 +1,40 @@
-"use client"
-import React, { createContext, useContext } from 'react';
-
 // ============================================
-// PASTE YOUR CASE STUDIES DATA HERE
+// CONTEXT SETUP (FIXED FOR TSX)
 // ============================================
 
-// Homepage Preview Data (Concise)
+import React, { createContext, useContext, ReactNode } from "react";
+
+// Define types for your data
+interface CaseStudyPreview {
+  id: string;
+  title: string;
+  image: string;
+  description: string;
+  cta: string;
+  bgColor: string;
+  link: string;
+  numbers?: string[];
+  result?: string;
+}
+
+interface CaseStudiesDetailed {
+  [key: string]: any; // You can replace 'any' with a detailed interface later
+}
+
+interface CaseStudiesContextType {
+  caseStudiesPreview: CaseStudyPreview[];
+  caseStudiesDetailed: CaseStudiesDetailed;
+}
+
+// Create the context with a proper type
+const CaseStudiesContext = createContext<CaseStudiesContextType | undefined>(
+  undefined
+);
+
+interface CaseStudiesProviderProps {
+  children: ReactNode;
+}
+
 const caseStudiesPreview = [
   {
     id: "blainy-saas",
@@ -21,7 +50,7 @@ const caseStudiesPreview = [
       "$0 spent on ads",
     ],
     cta: "Want ~85K Users? Read the Full Story →",
-    bgColor: "#E5DBEB",
+    bgColor: "#F4F2EF",
     link: "/case-studies/blainy-saas"
   },
   {
@@ -37,7 +66,7 @@ const caseStudiesPreview = [
       "Higher conversion rate than paid channels",
     ],
     cta: "See How I Did It →",
-    bgColor: "#F4F2EF",
+    bgColor: "#E5DBEB",
     link: "/case-studies/reddit-marketing"
   },
   {
@@ -47,7 +76,7 @@ const caseStudiesPreview = [
     description: "Helped local waterproofing business dominate their market through strategic local SEO and review campaigns.",
     result: "Increased local visibility. More qualified leads. Stronger online presence.",
     cta: "Need Local Marketing? Let's Talk →",
-    bgColor: "#DCE4EA",
+    bgColor: "#D2E8C8",
     link: "/case-studies/everdry-local"
   },
   {
@@ -63,7 +92,7 @@ const caseStudiesPreview = [
       "6 platforms managed simultaneously",
     ],
     cta: "Scale Your Social Presence →",
-    bgColor: "#F4F2EF",
+    bgColor: "#DCE4EA",
     link: "/case-studies/multi-channel-social"
   },
 ];
@@ -688,14 +717,10 @@ const caseStudiesDetailed = {
   }
 };
 
-// ============================================
-// CONTEXT SETUP
-// ============================================
-
-const CaseStudiesContext = createContext();
-
-export const CaseStudiesProvider = ({ children }) => {
-  const value = {
+export const CaseStudiesProvider: React.FC<CaseStudiesProviderProps> = ({
+  children,
+}) => {
+  const value: CaseStudiesContextType = {
     caseStudiesPreview,
     caseStudiesDetailed,
   };
@@ -707,22 +732,22 @@ export const CaseStudiesProvider = ({ children }) => {
   );
 };
 
-// Custom hook to use the context
-export const useCaseStudies = () => {
+// Custom hook to use the context safely
+export const useCaseStudies = (): CaseStudiesContextType => {
   const context = useContext(CaseStudiesContext);
   if (!context) {
-    throw new Error('useCaseStudies must be used within CaseStudiesProvider');
+    throw new Error("useCaseStudies must be used within CaseStudiesProvider");
   }
   return context;
 };
 
 // Optional: Helper hook to get a specific case study by ID
-export const useCaseStudy = (id) => {
+export const useCaseStudy = (id: string) => {
   const { caseStudiesPreview, caseStudiesDetailed } = useCaseStudies();
-  
+
   return {
-    preview: caseStudiesPreview.find(study => study.id === id),
-    detailed: caseStudiesDetailed[id]
+    preview: caseStudiesPreview.find((study) => study.id === id),
+    detailed: caseStudiesDetailed[id],
   };
 };
 

@@ -43,15 +43,15 @@ export default function FooterCTA() {
   ];
 
   return (
-    <footer className="bg-[#E8E5DF] py-16 px-4">
-      <div className="max-w-7xl mx-auto">
+    <footer className=" max-w-7xl mx-auto py-5 px-4">
+      <div className="">
         {/* CTA Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="group bg-gradient-to-br from-indigo-900 via-blue-900 to-indigo-800 hover:from-red-700 hover:via-rose-700 hover:to-red-600 rounded-[3rem] px-8 py-16 md:py-20 text-center mb-12 shadow-2xl relative overflow-hidden transition-all duration-700"
+          className="group bg-gradient-to-br from-indigo-900 via-blue-900 to-indigo-800 hover:from-red-700 hover:via-rose-700 hover:to-red-600 rounded-[3rem] px-8 py-16 md:py-20 text-center  shadow-2xl relative overflow-hidden transition-all duration-700"
         >
           {/* Subtle pattern background */}
           <div className="absolute inset-0 opacity-10">
@@ -109,18 +109,7 @@ export default function FooterCTA() {
           </div>
         </motion.div>
 
-        {/* Copyright */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-center"
-        >
-          <p className="text-gray-600 text-sm">
-            © 2024. Designed by Zain Ameen
-          </p>
-        </motion.div>
+      
       </div>
     </footer>
   );

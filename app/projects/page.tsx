@@ -82,7 +82,7 @@ export default function Projects() {
       {/* Case Studies Grid */}
       <section className="pb-20 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6">
             {filteredProjects.map((study, index) => (
               <motion.div
                 key={study.id}
@@ -93,7 +93,7 @@ export default function Projects() {
               >
                 <Link href={`/projects/${study.id}`}>
                   <div
-                    className="rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 h-full flex flex-col"
+                    className="rounded-3xl  overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 h-full flex flex-col"
                     style={{ backgroundColor: study.bgColor }}
                   >
                     {/* Image */}

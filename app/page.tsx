@@ -10,16 +10,28 @@ import Button from "./HomeComponents/Button";
 
 export default function Home() {
   return (
+    <>
     <div className="bg-[#ECEBE4] w-full min-h-screen p-2 md:p-20">
+
       <HeroComponents />
       <HomeTools />
       <Projects />
+
+<div className="max-w-7xl mx-auto mt-20 ">
+
     <Button/>
+</div>
+    </div>
+
       <Testimonials />
+    <div className="bg-[#ECEBE4] w-full min-h-screen p-2 md:p-20">
+
       <Process />
       <Services/>
       <FAQ/>
       <CTAContact/>
     </div>
+    </>
+
   );
 }

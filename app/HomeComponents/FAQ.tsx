@@ -53,8 +53,8 @@ export default function FAQ() {
   };
 
   return (
-    <section className="bg-[#F9F7F4] py-20 px-4">
-      <div className="max-w-4xl mx-auto">
+    <section className="bg-[#F9F7F4] max-w-7xl mt-5 rounded-3xl mx-auto py-20 px-4">
+      <div className="">
         {/* Headline */}
         <motion.div
           initial={{ opacity: 0, y: 18 }}

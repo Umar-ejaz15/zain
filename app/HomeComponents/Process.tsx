@@ -21,7 +21,7 @@ export default function Process() {
       title: "Discover",
       description:
         "Deep dive into your business. Competitor analysis. Audience research. Opportunity mapping. Find what competitors miss.",
-      image: "/images/discover.jpg",
+      image: "/1.avif",
       color: "#F4F2EF",
     },
     {
@@ -29,7 +29,7 @@ export default function Process() {
       title: "Define",
       description:
         "Build your growth roadmap. GTM strategy. Messaging framework. Channel selection. 90-day action plan.",
-      image: "/images/define.jpg",
+      image: "/2.avif",
       color: "#F9F7F4",
     },
     {
@@ -37,7 +37,7 @@ export default function Process() {
       title: "Develop",
       description:
         "Execute the plan. Content creation. SEO optimization. Community building. Campaign launches. Weekly optimization.",
-      image: "/images/develop.jpg",
+      image: "/3.avif",
       color: "#F7F5F3",
     },
     {
@@ -45,7 +45,7 @@ export default function Process() {
       title: "Deliver",
       description:
         "Track everything. Analyze data. Optimize what works. Scale winning channels. Report results monthly.",
-      image: "/images/deliver.jpg",
+      image: "/4.avif",
       color: "#FFF8F2",
     },
   ];
@@ -73,8 +73,8 @@ export default function Process() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-[#F9F7F4] py-24 px-4">
-      <div className="max-w-7xl mx-auto">
+    <section ref={sectionRef} className="bg-[#F8F7F5] max-w-7xl rounded-3xl mx-auto py-24 px-5">
+      <div className="">
         {/* Headline */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -110,9 +110,8 @@ export default function Process() {
                   className="w-full"
                 >
                   <div
-                    className="rounded-3xl p-10 shadow-lg border border-[#F0EDE9] transition-all duration-500"
+                    className="rounded-3xl p-10  transition-all duration-500"
                     style={{
-                      backgroundColor: phase.color,
                       transform:
                         activePhase === index ? "scale(1.02)" : "scale(1)",
                       opacity: activePhase === index ? 1 : 0.6,
@@ -123,7 +122,7 @@ export default function Process() {
                       <span className="text-6xl font-bold text-[#1C1C1E]/20">
                         {phase.number}
                       </span>
-                      <div className="h-1 flex-1 bg-[#1C1C1E]/10 rounded-full">
+                      <div className="h-1 flex-1 rounded-full">
                         <div
                           className="h-full bg-[#E6B17E] rounded-full transition-all duration-500"
                           style={{
@@ -146,8 +145,8 @@ export default function Process() {
           </div>
 
           {/* Right - Sticky Images */}
-          <div className="lg:w-1/2 relative">
-            <div className="sticky top-24 h-[70vh] hidden lg:block">
+          <div className="lg:w-2/4 relative">
+            <div className="sticky top-24  aspect-square hidden lg:block">
               {phases.map((phase, index) => (
                 <div
                   key={index}

@@ -56,85 +56,69 @@ export default function Footer() {
       ),
     },
     {
-      name: "Instagram",
-      href: "#",
-      icon: (
-        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-        </svg>
-      ),
-    },
-    {
-      name: "YouTube",
-      href: "#",
-      icon: (
-        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-        </svg>
-      ),
-    },
-    {
       name: "Email",
       href: "mailto:contact@zainameen.com",
       icon: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+          />
         </svg>
       ),
     },
   ];
 
   return (
-    <footer className="bg-gray-900 text-gray-300">
-      {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        {/* Logo and Tagline */}
-        <div className="mb-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h3 className="text-3xl font-bold text-white mb-3">
-              Zain Ul Abdin
-            </h3>
-            <p className="text-lg text-gray-400 max-w-md">
-              Growth Specialist for SaaS & Services. Building organic growth systems that scale.
-            </p>
-          </motion.div>
-        </div>
+    <footer className="bg-gradient-to-t from-[#EDEBE7] to-[#F8F6F4] text-[#3B3A38] border-t border-[#D6D3CE]/60">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 py-10">
+        {/* Logo and tagline */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-12"
+        >
+          <h3 className="text-3xl font-semibold text-[#1C1C1C] mb-3">
+            Zain Ul Abdin
+          </h3>
+          <p className="text-[#5A5854] max-w-md text-lg">
+            Growth Specialist for SaaS & Services. Building organic systems that scale.
+          </p>
+        </motion.div>
 
-        {/* Footer Columns */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          {/* Columns 1-3: Navigation, Services, Resources */}
-          {footerColumns.map((column, columnIndex) => (
+        {/* Footer grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+          {footerColumns.map((col, i) => (
             <motion.div
-              key={columnIndex}
+              key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: columnIndex * 0.1 }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
             >
-              <h4 className="text-white font-bold text-lg mb-4">
-                {column.title}
+              <h4 className="font-semibold text-[#1C1C1C] text-lg mb-4">
+                {col.title}
               </h4>
               <ul className="space-y-3">
-                {column.links.map((link, linkIndex) => (
-                  <li key={linkIndex}>
+                {col.links.map((link, j) => (
+                  <li key={j}>
                     {link.external ? (
                       <a
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gray-400 hover:text-white transition-colors duration-300 text-sm"
+                        className="text-[#5A5854] hover:text-[#C4A47C] transition-colors duration-300 text-sm"
                       >
                         {link.label}
                       </a>
                     ) : (
                       <Link
                         href={link.href}
-                        className="text-gray-400 hover:text-white transition-colors duration-300 text-sm"
+                        className="text-[#5A5854] hover:text-[#C4A47C] transition-colors duration-300 text-sm"
                       >
                         {link.label}
                       </Link>
@@ -145,38 +129,37 @@ export default function Footer() {
             </motion.div>
           ))}
 
-          {/* Column 4: Social */}
+          {/* Social column */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <h4 className="text-white font-bold text-lg mb-4">
+            <h4 className="font-semibold text-[#1C1C1C] text-lg mb-4">
               Connect
             </h4>
-            <div className="flex flex-wrap gap-3">
-              {socialLinks.map((social, index) => (
+            <div className="flex gap-3 flex-wrap">
+              {socialLinks.map((s, i) => (
                 <a
-                  key={index}
-                  href={social.href}
-                  target={social.href.startsWith('http') ? '_blank' : undefined}
-                  rel={social.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className="w-10 h-10 rounded-full bg-gray-800 hover:bg-gradient-to-r hover:from-indigo-600 hover:to-purple-600 flex items-center justify-center transition-all duration-300 hover:scale-110"
-                  aria-label={social.name}
+                  key={i}
+                  href={s.href}
+                  target={s.href.startsWith("http") ? "_blank" : undefined}
+                  rel={s.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="w-10 h-10 rounded-full bg-[#EAE8E2] hover:bg-[#C4A47C] flex items-center justify-center text-[#3B3A38] hover:text-white transition-all duration-300 hover:scale-105"
+                  aria-label={s.name}
                 >
-                  {social.icon}
+                  {s.icon}
                 </a>
               ))}
             </div>
-            
-            {/* Newsletter or CTA */}
+
             <div className="mt-6">
               <a
                 href="https://calendly.com/zain-ameen"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 hover:scale-105"
+                className="inline-flex items-center gap-2 bg-[#1C1C1C] hover:bg-[#2C2C2E] text-white px-6 py-3 rounded-full font-medium text-sm transition-all duration-300"
               >
                 Book a Call
                 <svg
@@ -197,27 +180,24 @@ export default function Footer() {
           </motion.div>
         </div>
 
-        {/* Divider */}
-        <div className="border-t border-gray-800 my-8"></div>
+        <div className="border-t border-[#D6D3CE] my-8"></div>
 
-        {/* Bottom Bar */}
+        {/* Bottom bar */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex flex-col md:flex-row justify-between items-center gap-4"
+          className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[#77736C]"
         >
-          <p className="text-sm text-gray-500 text-center md:text-left">
+          <p className="text-center md:text-left">
             © 2025 Zain Ul Abdin | Growth Specialist for SaaS & Services | All Rights Reserved
           </p>
-          
-          {/* Optional: Additional Links */}
-          <div className="flex gap-6 text-sm">
-            <Link href="/privacy" className="text-gray-500 hover:text-white transition-colors">
+          <div className="flex gap-6">
+            <Link href="/privacy" className="hover:text-[#C4A47C] transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="text-gray-500 hover:text-white transition-colors">
+            <Link href="/terms" className="hover:text-[#C4A47C] transition-colors">
               Terms of Service
             </Link>
           </div>

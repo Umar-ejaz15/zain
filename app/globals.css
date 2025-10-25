@@ -7,6 +7,9 @@
   --reverse-index: calc(var(--numcards) - var(--index0));
   --reverse-index0: calc(var(--reverse-index) - 1);
 }
+*{
+  font-family: lustria;
+}
 
 .card {
   position: sticky;

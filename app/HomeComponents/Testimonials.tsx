@@ -58,8 +58,8 @@ export default function Testimonials() {
   );
 
   return (
-    <section className="bg-[#F9F7F4] py-24 px-4 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg-[#ECEBE4] py-10 px-4 overflow-hidden">
+      <div className="w-full mx-auto">
         {/* Headline */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -74,7 +74,7 @@ export default function Testimonials() {
             <span className="text-[#E6B17E]">Working With Me</span>
           </h2>
 
-          <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-6 py-3 rounded-full shadow-sm">
+          <div className="inline-flex items-center gap-2 bg-[#F4F2EF] border border-gray-200 px-6 py-3 rounded-full shadow-sm">
             <svg
               className="w-5 h-5 text-[#A6A6A6]"
               fill="none"
@@ -96,11 +96,11 @@ export default function Testimonials() {
 
         {/* Marquee */}
         <div className="relative">
-          <div className="flex animate-marquee-slow hover:pause gap-6 py-8">
+          <div className="flex animate-marquee-slow hover:pause gap-3 py-8">
             {duplicatedTestimonials.map((testimonial, index) => (
               <div
                 key={`${testimonial.id}-${index}`}
-                className="flex-shrink-0 w-[420px] bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-[#F0EDE9]"
+                className="flex-shrink-0 w-[420px] bg-[#F4F2EF] rounded-md p-10 shadow-lg hover:shadow-xl transition-all duration-300 border border-[#F0EDE9]"
               >
                 <StarRating />
 
