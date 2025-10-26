@@ -8,7 +8,7 @@
   --reverse-index0: calc(var(--reverse-index) - 1);
 }
 *{
-  font-family: lustria;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .card {

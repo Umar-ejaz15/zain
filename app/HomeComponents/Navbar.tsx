@@ -36,7 +36,7 @@ export default function Navbar() {
         </Link>
         
         {/* Navigation Links */}
-        <ul className="hidden md:flex font-medium text-xl  items-center gap-8">
+        <ul className="hidden md:flex font-medium text-md  items-center gap-8">
           <li>
             <Link
               href="/"
