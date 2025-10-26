@@ -66,7 +66,7 @@ export default function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-5"
         >
           <h2 className="text-4xl md:text-5xl font-semibold text-[#1C1C1E] leading-tight mb-6">
             What Clients Say About
