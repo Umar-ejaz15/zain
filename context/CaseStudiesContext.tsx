@@ -18,8 +18,23 @@ interface CaseStudyPreview {
   result?: string;
 }
 
+interface Metric {
+  value: string;
+  label: string;
+}
+
+interface CaseStudyDetailed {
+  title: string;
+  subtitle: string;
+  image: string;
+  challenge: string;
+  results: string;
+  metrics: Metric[];
+  resultImages: string[];
+}
+
 interface CaseStudiesDetailed {
-  [key: string]: any; // You can replace 'any' with a detailed interface later
+  [key: string]: CaseStudyDetailed;
 }
 
 interface CaseStudiesContextType {
@@ -70,24 +85,23 @@ const caseStudiesPreview = [
     bgColor: "#E5DBEB",
     link: "/case-studies/reddit-marketing"
   },
- {
-  id: "everdry-local",
-  title: "Case Study 3: Service Business - Everdry Waterproofing",
-  image: "/images/local-business.jpg",
-  description:
-    "Helped local waterproofing business dominate their market through strategic local SEO and review campaigns.",
-  numbers: [
-    "↑ 220% Organic Traffic Growth",
-    "3× More Local Leads",
-    "100+ New Google Reviews"
-  ],
-  result:
-    "Increased local visibility. More qualified leads. Stronger online presence.",
-  cta: "Need Local Marketing? Let's Talk →",
-  bgColor: "#D2E8C8",
-  link: "/case-studies/everdry-local",
-},
-
+  {
+    id: "everdry-local",
+    title: "Case Study 3: Service Business - Everdry Waterproofing",
+    image: "/images/local-business.jpg",
+    description:
+      "Helped local waterproofing business dominate their market through strategic local SEO and review campaigns.",
+    numbers: [
+      "↑ 220% Organic Traffic Growth",
+      "3× More Local Leads",
+      "100+ New Google Reviews"
+    ],
+    result:
+      "Increased local visibility. More qualified leads. Stronger online presence.",
+    cta: "Need Local Marketing? Let's Talk →",
+    bgColor: "#D2E8C8",
+    link: "/case-studies/everdry-local",
+  },
   {
     id: "multi-channel-social",
     title: "Case Study 4: Multi-Channel Social - Thousands of Conversions",
@@ -106,26 +120,25 @@ const caseStudiesPreview = [
   },
 ];
 
-const caseStudiesDetailed = {
- "reddit-marketing": {
-  title: "Reddit Marketing – Thousands of Organic Users",
-  subtitle: "Generated 7,331 users for Hify and thousands more for Blainy through authentic Reddit engagement.",
-  image: "/images/reddit-dashboard.jpg",
-  challenge:
-    "Most companies treat Reddit like a billboard. They spam links and get banned. Traditional ads were expensive and not converting for B2B SaaS. Needed high-intent users without massive ad budgets. Had to crack Reddit without looking promotional.",
-  results:
-    "Generated 7,331 organic users for Hify and thousands more for Blainy through value-first content and authentic community engagement. 831 conversions in single month with $0 ad spend and higher conversion rate than paid channels.",
-  metrics: [
-    { value: "7,331", label: "Organic Users (Hify)" },
-    { value: "831", label: "Conversions (30 Days)" },
-    { value: "$0", label: "Ad Spend" },
-  ],
-  resultImages: [
-    "/images/reddit-dashboard.jpg",
-    "/images/results/reddit-engagement.jpg",
-    "/images/results/reddit-conversions.jpg",
-  ],
-},
+const caseStudiesDetailed: CaseStudiesDetailed = {
+  "reddit-marketing": {
+    title: "Reddit Marketing – Thousands of Organic Users",
+    subtitle: "Generated 7,331 users for Hify and thousands more for Blainy through authentic Reddit engagement.",
+    image: "/images/reddit-dashboard.jpg",
+    challenge:
+      "Most companies treat Reddit like a billboard. They spam links and get banned. Traditional ads were expensive and not converting for B2B SaaS. Needed high-intent users without massive ad budgets. Had to crack Reddit without looking promotional.",
+    results:
+      "Generated 7,331 organic users for Hify and thousands more for Blainy through value-first content and authentic community engagement. 831 conversions in single month with $0 ad spend and higher conversion rate than paid channels.",
+    metrics: [
+      { value: "7,331", label: "Organic Users (Hify)" },
+      { value: "831", label: "Conversions (30 Days)" },
+      { value: "$0", label: "Ad Spend" },
+    ],
+    resultImages: [
+      "/blainy/1.jfif",
+      "/blainy/2.jfif",
+    ],
+  },
   "everdry-local": {
     title: "Everdry Waterproofing – Local Market Domination",
     subtitle: "Helping a local waterproofing business dominate search results and generate consistent leads.",
@@ -145,7 +158,6 @@ const caseStudiesDetailed = {
       "/images/results/lead-graph.jpg",
     ],
   },
-
   "blainy-saas": {
     title: "Blainy SaaS – 85K Users Through Organic Growth",
     subtitle: "Scaled an AI writing tool to 85,000 users organically in 12 months.",
@@ -160,12 +172,10 @@ const caseStudiesDetailed = {
       { value: "$0", label: "Ad Spend" },
     ],
     resultImages: [
-      "/images/results/traffic-growth.jpg",
-      "/images/results/reddit-engagement.jpg",
-      "/images/results/seo-dashboard.jpg",
+      "/blainy/1.jfif",
+      "/blainy/2.jfif",
     ],
   },
-
   "multi-channel-social": {
     title: "Multi-Channel Social Campaigns – 6 Platforms, 3M+ Reach",
     subtitle: "Created a unified social strategy driving conversions across 6 major platforms.",
@@ -186,10 +196,6 @@ const caseStudiesDetailed = {
     ],
   },
 };
-
-
-// Detailed Case Study Pages Data
-
 
 export const CaseStudiesProvider: React.FC<CaseStudiesProviderProps> = ({
   children,
