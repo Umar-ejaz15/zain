@@ -15,9 +15,9 @@ export default function HomeTools() {
   const duplicatedLogos = [...logos, ...logos, ...logos];
 
   return (
-    <section className="max-w-7xl mx-auto py-10 mt-5 rounded-[32px] flex flex-col items-center text-center overflow-hidden ">
+    <section className="max-w-7xl mx-auto py-16 md:py-20 mt-5 rounded-[32px] flex flex-col items-center text-center overflow-hidden ">
       {/* Headline */}
-      <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-10 px-4">
+      <h2 className="text-2xl md:text-4xl font-semibold text-gray-900 mb-12 px-4">
         Trusted By SaaS & Service Companies
       </h2>
 

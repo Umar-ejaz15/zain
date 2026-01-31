@@ -73,7 +73,7 @@ export default function Process() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-[#F8F7F5] max-w-7xl rounded-3xl mx-auto py-24 px-5">
+    <section ref={sectionRef} className="bg-[#F8F7F5] max-w-7xl rounded-3xl mx-auto py-28 md:py-32 px-6 md:px-12 lg:px-16">
       <div className="">
         {/* Headline */}
         <motion.div

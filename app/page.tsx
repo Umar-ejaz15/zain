@@ -11,7 +11,7 @@ import Button from "./HomeComponents/Button";
 export default function Home() {
   return (
     <>
-    <div className="bg-[#ECEBE4] w-full min-h-screen p-2 md:p-20">
+    <div className="bg-[#ECEBE4] w-full min-h-screen p-2 sm:p-4 md:p-8 lg:p-20">
 
       <HeroComponents />
       <HomeTools />
@@ -24,7 +24,7 @@ export default function Home() {
     </div>
 
       <Testimonials />
-    <div className="bg-[#ECEBE4] w-full min-h-screen p-2 md:p-20">
+    <div className="bg-[#ECEBE4] w-full min-h-screen p-2 sm:p-4 md:p-8 lg:p-20">
 
       <Process />
       <Services/>

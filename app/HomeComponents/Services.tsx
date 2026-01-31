@@ -67,8 +67,8 @@ export default function Services() {
   const [activeTab, setActiveTab] = useState<TabType>("Product Growth");
 
   return (
-    <section className="bg-[#F8F6F4] max-w-7xl mx-auto rounded-3xl px-6 md:px-10 py-20 mt-5">
-      <div className="grid lg:grid-cols-2 gap-12 items-start">
+    <section className="bg-[#F8F6F4] max-w-7xl mx-auto rounded-3xl px-6 md:px-12 lg:px-16 py-24 md:py-28 mt-5">
+      <div className="grid lg:grid-cols-2 gap-16 items-start">
         {/* LEFT */}
         <div>
           <motion.h1
@@ -121,7 +121,7 @@ export default function Services() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16"
+            className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mt-12 md:mt-16"
           >
             {[
               { label: "Years experience", value: "14" },
@@ -130,8 +130,8 @@ export default function Services() {
               { label: "Industries served", value: "10" },
             ].map((stat) => (
               <div key={stat.label}>
-                <p className="text-gray-600 text-sm mb-2">{stat.label}</p>
-                <p className="text-4xl font-bold text-gray-900">
+                <p className="text-gray-600 text-xs md:text-sm mb-1 md:mb-2">{stat.label}</p>
+                <p className="text-3xl md:text-4xl font-bold text-gray-900">
                   {stat.value}
                 </p>
               </div>
@@ -141,12 +141,12 @@ export default function Services() {
 
         {/* RIGHT */}
         <div>
-          <div className="flex gap-6 mb-8  pb-2">
+          <div className="flex gap-4 md:gap-6 mb-8 pb-2 overflow-x-auto scrollbar-hide">
             {tabs.map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`whitespace-nowrap  pb-2 font-medium transition-colors relative ${
+                className={`whitespace-nowrap pb-2 px-2 text-sm md:text-base font-medium transition-colors relative flex-shrink-0 ${
                   activeTab === tab
                     ? "text-gray-900"
                     : "text-gray-400 hover:text-gray-600"
@@ -156,7 +156,7 @@ export default function Services() {
                 {activeTab === tab && (
                   <motion.div
                     layoutId="activeTab"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-[##E6B27E]"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#E6B27E]"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -186,7 +186,7 @@ export default function Services() {
                 <p className="text-gray-600 mb-6 leading-relaxed text-sm">
                   {tabContent[activeTab].description}
                 </p>
-                <button className="bg-[##E6B27E] text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-[#4F6B65] transition-all">
+                <button className="bg-[#E6B27E] text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-[#d19860] transition-all">
                   {tabContent[activeTab].buttonText}
                 </button>
               </div>

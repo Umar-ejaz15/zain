@@ -58,7 +58,7 @@ export default function Testimonials() {
   );
 
   return (
-    <section className="bg-[#ECEBE4] py-10 px-4 overflow-hidden">
+    <section className="bg-[#ECEBE4] py-20 md:py-24 px-4 overflow-hidden">
       <div className="w-full mx-auto">
         {/* Headline */}
         <motion.div

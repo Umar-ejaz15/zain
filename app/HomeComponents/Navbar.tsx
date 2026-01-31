@@ -5,23 +5,35 @@ import Link from 'next/link';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPercentage = (window.scrollY / window.innerHeight) * 100;
-      setScrolled(scrollPercentage > 20);
+      setScrolled(scrollPercentage > 10);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
+
   return (
     <nav
-      className={`fixed top-0 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ease-out ${
+      className={`fixed top-0 left-1/2 -translate-x-1/2 z-50 transition-all duration-700 ease-in-out ${
         scrolled
-          ? 'w-[90%] max-w-7xl mt-4 bg-white/95 backdrop-blur-lg shadow-2xl rounded-2xl px-8 py-4'
-          : 'w-[80%] max-w-8xl bg-transparent px-12 py-5'
+          ? 'w-[92%] max-w-6xl mt-4 bg-white shadow-xl rounded-2xl px-6 md:px-8 py-3'
+          : 'w-[96%] md:w-[88%] max-w-7xl bg-white/5 px-6 md:px-12 py-4'
       }`}
     >
       <div className="flex justify-between items-center">
@@ -102,15 +114,72 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className={`md:hidden flex flex-col gap-1.5 ${
             scrolled ? 'text-gray-900' : 'text-zinc-800'
           }`}
           aria-label="Menu"
         >
-          <span className={`w-6 h-0.5 ${scrolled ? 'bg-gray-900' : 'bg-white'} transition-colors`}></span>
-          <span className={`w-6 h-0.5 ${scrolled ? 'bg-gray-900' : 'bg-white'} transition-colors`}></span>
-          <span className={`w-6 h-0.5 ${scrolled ? 'bg-gray-900' : 'bg-white'} transition-colors`}></span>
+          <span className={`w-6 h-0.5 ${mobileMenuOpen ? 'bg-gray-900 rotate-45 translate-y-2' : (scrolled ? 'bg-gray-900' : 'bg-zinc-800')} transition-all duration-300`}></span>
+          <span className={`w-6 h-0.5 ${mobileMenuOpen ? 'opacity-0' : (scrolled ? 'bg-gray-900' : 'bg-zinc-800')} transition-all duration-300`}></span>
+          <span className={`w-6 h-0.5 ${mobileMenuOpen ? 'bg-gray-900 -rotate-45 -translate-y-2' : (scrolled ? 'bg-gray-900' : 'bg-zinc-800')} transition-all duration-300`}></span>
         </button>
+      </div>
+
+      {/* Mobile Menu */}
+      <div
+        className={`md:hidden fixed top-0 right-0 h-screen w-full bg-white z-40 transition-transform duration-300 ease-in-out ${
+          mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+        style={{ paddingTop: '80px' }}
+      >
+        <ul className="flex flex-col items-center gap-8 py-8">
+          <li>
+            <Link
+              href="/"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-2xl font-medium text-gray-800 hover:text-[#C4A47C] transition-colors"
+            >
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/case-studies"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-2xl font-medium text-gray-800 hover:text-[#C4A47C] transition-colors"
+            >
+              Case Studies
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/about"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-2xl font-medium text-gray-800 hover:text-[#C4A47C] transition-colors"
+            >
+              About
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/services"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-2xl font-medium text-gray-800 hover:text-[#C4A47C] transition-colors"
+            >
+              Services
+            </Link>
+          </li>
+          <li className="mt-4">
+            <Link
+              href="/contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="px-8 py-3 bg-gradient-to-r from-zinc-800 to-black text-white rounded-full font-semibold hover:shadow-lg transition-all"
+            >
+              Contact Me
+            </Link>
+          </li>
+        </ul>
       </div>
     </nav>
   );

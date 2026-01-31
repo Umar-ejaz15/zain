@@ -53,7 +53,7 @@ export default function FAQ() {
   };
 
   return (
-    <section className="bg-[#F9F7F4] max-w-7xl mt-5 rounded-3xl mx-auto py-20 px-4">
+    <section className="bg-[#F9F7F4] max-w-7xl mt-5 rounded-3xl mx-auto py-24 md:py-28 px-6 md:px-12 lg:px-16">
       <div className="">
         {/* Headline */}
         <motion.div
@@ -139,8 +139,8 @@ export default function FAQ() {
                     transition={{ duration: 0.28, ease: "easeInOut" }}
                     className="overflow-hidden"
                   >
-                    <div className="px-6 md:px-8 pb-6 pl-20 bg-[#F9F7F4]">
-                      <p className="text-[#4A4A4A] leading-relaxed text-base md:text-lg">
+                    <div className="px-6 md:px-8 pb-6 md:pl-20 bg-[#F9F7F4]">
+                      <p className="text-[#4A4A4A] leading-relaxed text-sm md:text-base">
                         {faq.answer}
                       </p>
                     </div>

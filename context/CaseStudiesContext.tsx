@@ -58,12 +58,9 @@ const caseStudiesPreview = [
     image: "/images/blainy-dashboard.jpg",
     description: "Scaled from zero to 85K organic users in 12 months with pure strategy and no ad spend.",
     numbers: [
-      "~85,000 organic users in 12 months",
-      "~30M search impressions (Google + Bing)",
-      "Thousands of users from Reddit alone",
-      "831 Reddit conversions in 30 days",
-      "100s of paying customers",
-      "$0 spent on ads",
+      "85,000+ organic users in 12 months",
+      "30M+ search impressions across platforms",
+      "Zero ad spend, 100% organic growth",
     ],
     cta: "Want ~85K Users? Read the Full Story →",
     bgColor: "#F4F2EF",
@@ -75,10 +72,8 @@ const caseStudiesPreview = [
     image: "/images/reddit-dashboard.jpg",
     description: "Generated 7,331 users for Hify and thousands more for Blainy through authentic Reddit engagement.",
     numbers: [
-      "7,331 organic users for Hify",
-      "831 conversions in single month",
-      "Thousands more for Blainy",
-      "$0 ad spend",
+      "7,331 organic users generated for Hify",
+      "831 conversions in single 30-day period",
       "Higher conversion rate than paid channels",
     ],
     cta: "See How I Did It →",
@@ -92,9 +87,9 @@ const caseStudiesPreview = [
     description:
       "Helped local waterproofing business dominate their market through strategic local SEO and review campaigns.",
     numbers: [
-      "↑ 220% Organic Traffic Growth",
-      "3× More Local Leads",
-      "100+ New Google Reviews"
+      "220% increase in organic traffic",
+      "3x more qualified local leads",
+      "100+ new 5-star Google reviews"
     ],
     result:
       "Increased local visibility. More qualified leads. Stronger online presence.",
@@ -108,11 +103,9 @@ const caseStudiesPreview = [
     image: "/images/social-dashboard.jpg",
     description: "Orchestrated 6-platform social media strategy delivering massive reach and thousands of conversions.",
     numbers: [
-      "Thousands of social-driven conversions",
-      "~80K+ YouTube views in 30 days",
-      "~225K+ Threads impressions",
-      "~3M Instagram reach",
-      "6 platforms managed simultaneously",
+      "3M+ Instagram reach achieved",
+      "225K+ Threads impressions generated",
+      "80K+ YouTube views in 30 days",
     ],
     cta: "Scale Your Social Presence →",
     bgColor: "#DCE4EA",
