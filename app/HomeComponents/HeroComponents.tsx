@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Hero() {
   return (
-    <section className="bg-gradient-to-tl from-[#EDEBE7] to-[#F8F6F4] max-w-7xl mx-auto rounded-3xl w-full flex items-center justify-center px-6 sm:px-8 md:px-12 lg:px-16 py-16 sm:py-20 md:py-28 lg:py-32">
+    <section className="max-w-7xl mx-auto rounded-3xl w-full flex items-center justify-center px-6 sm:px-8 md:px-12 lg:px-16 py-12 sm:py-16 md:py-20 lg:py-24" style={{ background: "linear-gradient(to bottom, #F8F6F4, #ECEBE4)" }}>
       <div className="mx-auto flex flex-col lg:flex-row items-center justify-between gap-10 sm:gap-14 lg:gap-24">
         
         {/* Left Section */}
@@ -29,7 +29,7 @@ export default function Hero() {
           {/* CTA Buttons */}
           <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
             <Link
-              href="/projects"
+              href="/case-studies"
               className="bg-[#1C1C1C] text-white px-8 py-3.5 rounded-full font-medium hover:bg-[#2C2C2E] transition-all duration-300 shadow-md"
             >
               View My Work

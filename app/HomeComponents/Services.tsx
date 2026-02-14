@@ -26,7 +26,7 @@ const tabContent: Record<TabType, TabContent> = {
     title: "Full-Funnel Growth\nfor Tech Products",
     description:
       "GTM strategy. User acquisition. Retention. SEO, Reddit, social, email—everything you need to scale.",
-    result: "~85K users in 12 months. Organic.",
+    result: "85K users in 12 months. Organic.",
     buttonText: "Grow Your SaaS Product",
     gradient1: "from-[#DEE7E2] to-[#CAD8D1]",
     gradient2: "from-[#E9F1ED] to-[#D3E0DB]",
@@ -46,7 +46,7 @@ const tabContent: Record<TabType, TabContent> = {
     title: "Rank Everywhere\nThat Matters",
     description:
       "Google, Bing, Reddit, YouTube ranking. Content that compounds monthly. Backlinks. Authority. Page 1 positions.",
-    result: "~30M impressions. Thousands of leads.",
+    result: "30M impressions. Thousands of leads.",
     buttonText: "Start SEO Strategy",
     gradient1: "from-[#E3E9E0] to-[#D4DED2]",
     gradient2: "from-[#EAF0E6] to-[#DDE7DA]",

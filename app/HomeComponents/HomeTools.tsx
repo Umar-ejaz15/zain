@@ -3,35 +3,32 @@ import React from "react";
 
 export default function HomeTools() {
   const logos = [
-    { name: "Amoxt Solutions", img: "/amox.jpg" },
-    { name: "Everdry Waterproofing", img: "/everdry.gif" },
-    { name: "Hify", img: "/HIGHFY.avif" },
-    { name: "Infinix Solutions", img: "/infinix.png" },
-    { name: "HubSpot Certified", img: "/hubspot.svg" },
-    { name: "SEMrush Certified", img: "/semrush.jpg" },
+    { name: "Amoxt Solutions", img: "/companies/amoxt_cover.jpg" },
+    { name: "Blainy", img: "/companies/blainy-logo-full-3xl.png" },
+    { name: "Hify", img: "/companies/hify.webp" },
+    { name: "Everdry Waterproofing", img: "/companies/images.jpg" },
+    { name: "Infinix Solutions", img: "/companies/images_3.png" },
+    { name: "Blainy Logo", img: "/companies/blainy_logo.jpg" },
   ];
 
   // Duplicate logos for seamless loop
   const duplicatedLogos = [...logos, ...logos, ...logos];
 
   return (
-    <section className="max-w-7xl mx-auto py-16 md:py-20 mt-5 rounded-[32px] flex flex-col items-center text-center overflow-hidden ">
+    <section className="bg-[#ECEBE4] py-16 md:py-20 px-4 flex flex-col items-center text-center overflow-hidden">
       {/* Headline */}
-      <h2 className="text-2xl md:text-4xl font-semibold text-gray-900 mb-12 px-4">
-        Trusted By SaaS & Service Companies
+      <h2 className="text-2xl md:text-4xl font-semibold text-[#1C1C1E] mb-10 px-4">
+        Companies I Work With
       </h2>
 
       {/* Marquee Container */}
       <div className="relative w-full overflow-hidden mb-5">
-        {/* Left Fade */}
-       
-
         {/* Marquee Track */}
         <div className="flex animate-marquee">
           {duplicatedLogos.map((logo, index) => (
             <div
               key={index}
-              className="flex-shrink-0 mx-6 bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex items-center justify-center min-w-[160px] h-[100px]"
+              className="flex-shrink-0 mx-10 flex items-center justify-center"
             >
               <img
                 src={logo.img}
@@ -44,7 +41,7 @@ export default function HomeTools() {
       </div>
 
       {/* Tagline */}
-      <p className="text-gray-700 text-lg mt-4 max-w-2xl px-4">
+      <p className="text-[#55524D] text-lg mt-4 max-w-2xl px-4">
         Helping tech startups and service businesses scale from traction to
         momentum.
       </p>

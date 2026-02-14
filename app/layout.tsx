@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Atkinson_Hyperlegible } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import Footer from "./HomeComponents/Footer";
 import Navbar from "./HomeComponents/Navbar";
 import { CaseStudiesProvider } from "@/context/CaseStudiesContext";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const atkinson = Atkinson_Hyperlegible({
+  variable: "--font-atkinson",
+  weight: "400",
   subsets: ["latin"],
 });
 
@@ -142,7 +143,7 @@ export default function RootLayout({
       </head>
 
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${inter.variable} ${atkinson.variable} antialiased`}
       >
         <CaseStudiesProvider>
           <Navbar />

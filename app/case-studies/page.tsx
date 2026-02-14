@@ -24,14 +24,14 @@ export default function Projects() {
   function getCategoryFromId(id: string): string {
     const categoryMap: Record<string, string> = {
       "blainy-saas": "SaaS",
-      "reddit-marketing": "Marketing",
-      "everdry-local": "Service Business",
-      "multi-channel-social": "Social Media",
+      "reddit-growth": "Marketing",
+      "seo-growth": "SEO",
+      "multi-platform": "Social Media",
     };
     return categoryMap[id] || "Marketing";
   }
 
-  const categories = ["All", "SaaS", "Marketing", "Service Business", "Social Media"];
+  const categories = ["All", "SaaS", "Marketing", "SEO", "Social Media"];
 
   const filteredProjects = filter === "All" 
     ? allCaseStudies 
@@ -40,7 +40,7 @@ export default function Projects() {
   return (
     <div className="min-h-screen bg-[#F8F6F4]">
       {/* Hero Section */}
-      <section className="pt-24 pb-16 px-4">
+      <section className="pt-28 md:pt-32 pb-16 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -91,13 +91,13 @@ export default function Projects() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="group"
               >
-                <Link href={`/projects/${study.id}`}>
+                <Link href={`/case-studies/${study.id}`}>
                   <div
-                    className="rounded-3xl  overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 h-full flex flex-col"
+                    className="rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 h-full flex flex-col"
                     style={{ backgroundColor: study.bgColor }}
                   >
                     {/* Image */}
-                    <div className="relative h-64 overflow-hidden">
+                    <div className="relative h-[24rem] md:h-[32rem] lg:h-[36rem] overflow-hidden">
                       <img
                         src={study.image}
                         alt={study.title}
@@ -109,11 +109,11 @@ export default function Projects() {
                     </div>
 
                     {/* Content */}
-                    <div className="p-6 flex-1 flex flex-col">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-indigo-600 transition-colors">
+                    <div className="p-6 md:p-8 flex-1 flex flex-col">
+                      <h3 className="text-lg lg:text-2xl font-bold text-gray-900 mb-3 group-hover:text-indigo-600 transition-colors leading-tight">
                         {study.title}
                       </h3>
-                      <p className="text-gray-700 mb-4 flex-1">
+                      <p className="text-sm md:text-base text-gray-700 mb-4 flex-1 leading-relaxed">
                         {study.excerpt}
                       </p>
 

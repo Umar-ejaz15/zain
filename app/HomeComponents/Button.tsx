@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Button() {
   return (
     <Link
-      href="/projects"
+      href="/case-studies"
       className="group w-fit  flex mx-auto items-center gap-3 bg-[#E6B17E] hover:bg-[#D9A16D] text-[#1C1C1E] px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-md hover:shadow-lg"
     >
       View All Case Studies

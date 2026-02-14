@@ -1,11 +1,11 @@
 "use client";
-import React from "react";
 import Link from "next/link";
 
 type CaseStudy = {
   id: string;
   title: string;
   image: string;
+  image2?: string;
   description?: string;
   numbers?: string[];
   challenge?: string;
@@ -23,93 +23,92 @@ export default function ProjectCaseStudy({ caseData }: ProjectCaseStudyProps) {
   return (
     <section
       id="cards"
-      className="relative flex flex-col items-center max-w-7xl mx-auto rounded-3xl gap-6 py-24 px-6 sm:px-8 bg-[#F8F6F4]"
+      className="relative flex flex-col items-center max-w-[1400px] mx-auto gap-8 py-24 px-6 sm:px-12"
     >
       {caseData.map((item, index) => (
         <div
           key={item.id || index}
-          className="w-full flex card card-content flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:gap-16 rounded-3xl p-8 sm:p-12 lg:p-16 bg-white shadow-lg hover:shadow-xl transition-all duration-300"
+          className="w-full card card-content rounded-3xl shadow-[0_10px_40px_-14px_rgba(0,0,0,0.05)]"
+          style={{ backgroundColor: item.bgColor }}
         >
-          {/* Left Content */}
-          <div className="w-full lg:w-1/2 space-y-6">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 leading-snug">
-              {item.title}
-            </h2>
+          <div className="flex flex-col-reverse lg:flex-row items-stretch gap-0 p-8 sm:p-10 lg:py-14 lg:pl-14 lg:pr-8">
+            {/* Left Content */}
+            <div className="w-full lg:w-[45%] flex flex-col justify-between pt-6 lg:pt-0 lg:pr-10">
+              {/* Top Group: Title + Description + Pills */}
+              <div className="space-y-5">
+                {/* Title */}
+                <h2 className="text-2xl sm:text-[1.75rem] lg:text-[2rem] font-semibold text-[#111011] leading-[1.2] tracking-[-0.02em]">
+                  {item.title}
+                </h2>
 
-            {item.description && (
-              <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                {item.description}
-              </p>
-            )}
+                {/* Description */}
+                {item.description && (
+                  <p className="text-[15px] text-[#111011]/75 leading-[1.65]">
+                    {item.description}
+                  </p>
+                )}
 
-            {/* Numbers Section with Web-themed SVG Icons */}
-            {item.numbers && item.numbers.length > 0 && (
-              <ul className="flex flex-col gap-4 pt-2">
-                {item.numbers.map((num, idx) => (
-                  <li
-                    key={idx}
-                    className="flex items-start gap-3 text-base font-medium text-gray-800"
-                  >
-                    <svg
-                      className="w-6 h-6 flex-shrink-0 mt-0.5 text-[#E6B27E]"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <span>{num}</span>
-                  </li>
-                ))}
-              </ul>
-            )}
+                {/* Feature Pills */}
+                {item.numbers && item.numbers.length > 0 && (
+                  <div className="flex flex-col gap-3">
+                    {item.numbers.map((num, idx) => (
+                      <div
+                        key={idx}
+                        className="inline-flex items-center gap-2.5 bg-white rounded-[36px] px-4 py-2.5 w-fit"
+                      >
+                        <span
+                          className="w-5 h-5 flex-shrink-0 rounded-[36px]"
+                          style={{
+                            background:
+                              "radial-gradient(100% 100% at 25% 100%, rgb(205, 87, 255) 0%, rgb(255, 206, 31) 100%)",
+                          }}
+                        />
+                        <span className="text-sm font-medium text-[#111011]">
+                          {num}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
 
-            <Link
-              href={`/projects/${item.id}`}
-              className="inline-flex items-center gap-3 bg-gray-900 hover:bg-gray-800 text-white px-8 py-3.5 rounded-full font-medium transition-transform duration-300 hover:scale-[1.04] active:scale-95 shadow-md"
-            >
-              {item.cta}
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+              {/* View Project Link - pushed to bottom */}
+              <Link
+                href={`/case-studies/${item.id}`}
+                className="inline-flex items-center gap-1.5 group mt-10"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M13 7l5 5m0 0l-5 5m5-5H6"
-                />
-              </svg>
-            </Link>
-          </div>
-
-          {/* Right Images */}
-          <div className="w-full lg:w-1/2 flex flex-col gap-4">
-            {/* Top Full Image */}
-            <div className="relative w-full rounded-2xl overflow-hidden shadow-md">
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full h-64 sm:h-72 lg:h-80 object-cover transition-transform duration-500 hover:scale-105"
-              />
+                <span className="text-[15px] text-[#111011]/60">
+                  View Project
+                </span>
+                <svg
+                  className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1"
+                  viewBox="0 0 24 24"
+                  fill="rgba(17, 16, 17, 0.6)"
+                >
+                  <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+                </svg>
+              </Link>
             </div>
 
-            {/* Bottom Half Image */}
-            <div className="relative w-full h-32 sm:h-40 lg:h-48 rounded-2xl overflow-hidden shadow-md"
-              style={{ backgroundColor: item.bgColor }}
-            >
-              <img
-                src={item.image}
-                alt={`${item.title} detail`}
-                className="w-full h-full object-cover opacity-40 transition-all duration-500 hover:opacity-60"
-              />
+            {/* Right Images */}
+            <div className="w-full lg:w-[55%] flex flex-col gap-2">
+              {/* Top Image */}
+              <div className="relative w-full overflow-hidden rounded-t-2xl">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-56 sm:h-64 lg:h-[280px] object-cover"
+                />
+              </div>
+
+              {/* Bottom Image */}
+              <div className="relative w-full overflow-hidden rounded-b-2xl">
+                <img
+                  src={item.image2 || item.image}
+                  alt={`${item.title} detail`}
+                  className="w-full h-36 sm:h-40 lg:h-[180px] object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>

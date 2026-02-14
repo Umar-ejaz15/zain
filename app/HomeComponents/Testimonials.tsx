@@ -6,7 +6,7 @@ export default function Testimonials() {
   const testimonials = [
     {
       id: 1,
-      text: "Zain took our SaaS from zero to ~85,000 users in a year. All organic. His Reddit strategy alone brought thousands of qualified users without spending a dollar. He's a growth architect, not just a marketer.",
+      text: "Zain took our SaaS from zero to 85,000 users in a year. All organic. His Reddit strategy alone brought thousands of qualified users without spending a dollar. He's a growth architect, not just a marketer.",
       author: "Founder",
       company: "Amoxt Solutions (Blainy)",
       rating: 5,

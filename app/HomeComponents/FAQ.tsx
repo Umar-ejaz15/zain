@@ -9,7 +9,7 @@ export default function FAQ() {
     {
       question: "Do you work with SaaS or service businesses?",
       answer:
-        "Both. I specialize in SaaS products (like Blainy - ~85K users) and service businesses (like Everdry Waterproofing). Same growth principles. Different execution.",
+        "Both. I specialize in SaaS products (like Blainy - 85K users) and service businesses (like Everdry Waterproofing). Same growth principles. Different execution.",
     },
     {
       question: "How fast can I see results?",
@@ -17,7 +17,7 @@ export default function FAQ() {
         "Reddit and social can generate leads in 30 days. SEO takes 60-90 days for momentum. I focus on sustainable growth, not quick hacks that die.",
     },
     {
-      question: "Can you replicate the ~85K users result?",
+      question: "Can you replicate the 85K users result?",
       answer:
         "Every business is different. But I use the same systems: multi-channel SEO, Reddit marketing, social media, email campaigns. The framework scales.",
     },

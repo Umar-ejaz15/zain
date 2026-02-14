@@ -22,7 +22,7 @@ export default function SeperateProject() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header Section */}
-      <div className="max-w-6xl mx-auto px-8 py-16">
+      <div className="max-w-6xl mx-auto px-8 pt-28 md:pt-32 pb-16">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
           {detailed.title}
         </h1>
@@ -31,9 +31,9 @@ export default function SeperateProject() {
         </p>
 
         {/* Hero Gradient Image */}
-        <div className="mt-12 rounded-3xl overflow-hidden bg-gradient-to-br from-blue-400 via-purple-300 to-orange-300 h-80 flex items-center justify-center relative">
-          <div className="absolute w-96 h-96 rounded-full bg-gradient-to-br from-pink-200 via-blue-200 to-orange-200 opacity-90 blur-3xl"></div>
-          <div className="relative w-72 h-72 rounded-full bg-gradient-to-br from-pink-300/80 via-blue-300/80 to-cyan-200/80 shadow-2xl"></div>
+        <div className="mt-12 rounded-3xl overflow-hidden bg-gradient-to-br from-blue-400 via-purple-300 to-orange-300 h-[28rem] md:h-[34rem] flex items-center justify-center relative">
+          <div className="absolute w-[30rem] h-[30rem] rounded-full bg-gradient-to-br from-pink-200 via-blue-200 to-orange-200 opacity-90 blur-3xl"></div>
+          <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-full bg-gradient-to-br from-pink-300/80 via-blue-300/80 to-cyan-200/80 shadow-2xl"></div>
         </div>
 
         {/* Sidebar and Content Grid */}
@@ -49,29 +49,87 @@ export default function SeperateProject() {
               <div>
                 <div className="text-gray-500 mb-1">Industry</div>
                 <div className="text-gray-900">
-                  {caseStudyId === 'everdry-local' ? 'Local Service' : 
-                   caseStudyId === 'blainy-saas' ? 'SaaS' : 
-                   caseStudyId === 'reddit-marketing' ? 'B2B SaaS' :
-                   'Social Media'}
+                  {caseStudyId === 'blainy-saas' ? 'SaaS' :
+                   caseStudyId === 'reddit-growth' ? 'B2B SaaS' :
+                   caseStudyId === 'seo-growth' ? 'AI SaaS' :
+                   caseStudyId === 'multi-platform' ? 'SaaS' :
+                   'Marketing'}
                 </div>
               </div>
               <div>
                 <div className="text-gray-500 mb-1">Services</div>
                 <div className="text-gray-900">
-                  {caseStudyId === 'everdry-local' ? 'Local SEO' : 
-                   caseStudyId === 'blainy-saas' ? 'Growth Marketing' : 
-                   caseStudyId === 'reddit-marketing' ? 'Reddit Marketing' :
-                   'Multi-Channel Social'}
+                  {caseStudyId === 'blainy-saas' ? 'Growth Marketing' :
+                   caseStudyId === 'reddit-growth' ? 'Reddit Marketing, Content Strategy, Organic Growth' :
+                   caseStudyId === 'seo-growth' ? 'SEO Strategy, Technical SEO, Content Marketing, Link Building' :
+                   caseStudyId === 'multi-platform' ? 'Social Media Marketing, Multi-Platform Optimization' :
+                   'Digital Marketing'}
                 </div>
               </div>
               <div>
                 <div className="text-gray-500 mb-1">Duration</div>
                 <div className="text-gray-900">
-                  {caseStudyId === 'blainy-saas' ? '12 Months' : 
-                   caseStudyId === 'reddit-marketing' ? '8 Months' :
+                  {caseStudyId === 'blainy-saas' ? '12 Months' :
+                   caseStudyId === 'reddit-growth' ? '60 Days' :
+                   caseStudyId === 'seo-growth' ? '12 Months' :
+                   caseStudyId === 'multi-platform' ? '30 Days' :
                    '6 Months'}
                 </div>
               </div>
+              {caseStudyId === 'reddit-growth' && (
+                <>
+                  <div>
+                    <div className="text-gray-500 mb-1">Skills</div>
+                    <div className="text-gray-900 space-y-1">
+                      <div>Reddit Marketing</div>
+                      <div>Social Media Marketing</div>
+                      <div>Content Strategy</div>
+                      <div>Organic Traffic Growth</div>
+                      <div>Community Promotion</div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-gray-500 mb-1">Published</div>
+                    <div className="text-gray-900">Apr 30, 2025</div>
+                  </div>
+                </>
+              )}
+              {caseStudyId === 'seo-growth' && (
+                <>
+                  <div>
+                    <div className="text-gray-500 mb-1">Skills</div>
+                    <div className="text-gray-900 space-y-1">
+                      <div>SEO Strategy</div>
+                      <div>Technical SEO</div>
+                      <div>SEO Keyword Research</div>
+                      <div>Link Building</div>
+                      <div>Content Marketing</div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-gray-500 mb-1">Published</div>
+                    <div className="text-gray-900">Apr 28, 2025</div>
+                  </div>
+                </>
+              )}
+              {caseStudyId === 'multi-platform' && (
+                <>
+                  <div>
+                    <div className="text-gray-500 mb-1">Skills</div>
+                    <div className="text-gray-900 space-y-1">
+                      <div>Social Media Marketing</div>
+                      <div>Multi-Platform Optimization</div>
+                      <div>Social Media Lead Generation</div>
+                      <div>Social Media Strategy</div>
+                      <div>Social Media Content Creation</div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-gray-500 mb-1">Published</div>
+                    <div className="text-gray-900">Apr 28, 2025</div>
+                  </div>
+                </>
+              )}
             </div>
           </div>
 
@@ -84,6 +142,16 @@ export default function SeperateProject() {
                 {detailed.challenge}
               </p>
             </div>
+
+            {/* Strategy Section */}
+            {detailed.strategy && (
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">Strategy</h2>
+                <p className="text-gray-600 leading-relaxed">
+                  {detailed.strategy}
+                </p>
+              </div>
+            )}
 
             {/* Results Section */}
             <div>

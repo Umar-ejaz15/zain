@@ -64,7 +64,7 @@ export default function Navbar() {
           <li>
             <Link
               href="/case-studies"
-              className={`relative  transition-colors duration-300 hover:opacity-80 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:transition-all after:duration-300 ${
+              className={`relative transition-colors duration-300 hover:opacity-80 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:transition-all after:duration-300 ${
                 scrolled
                   ? 'text-gray-700 after:bg-zinc-600'
                   : 'text-zinc-800 after:bg-white'
